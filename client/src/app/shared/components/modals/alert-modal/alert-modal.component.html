@@ -1,0 +1,16 @@
+<div>
+  <div class="modal-header" [ngClass]="cssClass" *ngIf="title">
+    <span class="error-mark" *ngIf="isErrorType">
+      <fa-icon [icon]="faClose"></fa-icon>
+    </span>
+    <h5 class="modal-title" [innerHtml]="title"></h5>
+  </div>
+  <div class="modal-body" *ngIf="body">
+    <p [innerHtml]="body | safeHtml"></p>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <button class="btn btn-blue" (click)="hideModal()">Ok</button>
+    </div>
+  </div>
+</div>

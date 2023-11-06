@@ -1,0 +1,30 @@
+<div
+  class="form-group"
+  [class.required]="isRequired"
+  [formGroup]="parentForm"
+  [class.inline]="isInline"
+>
+  <mat-form-field
+    [floatLabel]="'auto'"
+    appearance="outline"
+    [class.readonly]="readOnlyCss"
+  >
+    <mat-label>{{ title }}</mat-label>
+
+    <input
+      matInput
+      appTrim
+      [class.is-invalid]="control.invalid && control.touched"
+      type="text"
+      class="form-control form-control-sm"
+      [formControlName]="controlName"
+      (ngModelChange)="change($event)"
+      [placeholder]="placeholderText"
+    />
+
+    <mat-error>
+      <span *ngIf="control.errors?.['required']">{{ requiredText }}</span>
+      <span *ngIf="control.errors?.['maxlength']"> {{ maxLengthErr }} </span>
+    </mat-error>
+  </mat-form-field>
+</div>

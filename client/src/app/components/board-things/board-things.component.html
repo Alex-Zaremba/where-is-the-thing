@@ -1,0 +1,70 @@
+<div class="row" *ngIf="containersIds?.length > 0">
+  <div class="col-12 text-center mt-2">
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="saveThingsDistribution()"
+    >
+      Save things distribution
+    </button>
+  </div>
+  <div class="col-6">
+    <div class="container">
+      <h5>Containers</h5>
+      <div
+        *ngFor="let container of containers"
+        [ngClass]="{
+          'parent-container': isContainerParent(
+            parentChildDataService,
+            container.id
+          ),
+          'child-container': isContainerChild(
+            parentChildDataService,
+            container.id
+          )
+        }"
+      >
+        <app-container
+          class="example-container"
+          [containers]="containers"
+          [container]="container"
+          [connectedTo]="containersConnectedToList"
+          [containerThingsData]="containerThingsData"
+          [containerChildData]="containerChildData"
+          [recalculateContainers]="recalculateContainers"
+          (thingMoved)="thingMoved($event)"
+          (containerMoved)="containerMoved($event)"
+        ></app-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="container">
+      <h5>Things</h5>
+      <div
+        cdkDropList
+        [cdkDropListData]="things"
+        [cdkDropListConnectedTo]="containersIds"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+        id="things"
+      >
+        <div class="row">
+          <div class="col-sm-6 col-lg-4" *ngFor="let item of things" cdkDrag>
+            <div class="thing-item-admin">
+              <div class="name">
+                <span class="title">Name: </span>
+                <span class="value">{{ item.name }} </span>
+              </div>
+              <div class="volume">
+                <span class="title">Volume: </span>
+                <span class="value">{{ item.volume }} </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

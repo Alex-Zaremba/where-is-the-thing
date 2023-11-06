@@ -1,0 +1,142 @@
+@import "./variables";
+
+.form-control {
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  outline: none;
+  background: white !important;
+  &:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: $input-border;
+  }
+  &:disabled {
+    background: $disabled-input-background !important;
+    //color: $disabled-text-color !important;
+    color: $text-default !important;
+  }
+  &.multiline {
+    height: auto;
+  }
+}
+
+.success-mark,
+.error-mark {
+  background-color: #bece08;
+  padding: 5px 8px;
+  border-radius: 50%;
+  color: white;
+  margin-left: 10px;
+}
+
+.success-mark {
+  &.big {
+    padding: 20px 24px;
+  }
+}
+
+.error-mark {
+  background-color: $error-color;
+  padding: 5px 10px;
+}
+
+.mat-form-field {
+  margin-top: 50px;
+  border: 1px solid $input-border;
+  border-radius: 3px;
+  &.green-border {
+    border: 1px solid $green-color;
+  }
+  &.ng-invalid.ng-touched {
+    border: 1px solid $error-color;
+  }
+  &.ng-valid.ng-touched:not(.distribution-input) {
+    border: 1px solid $green-color;
+  }
+  .success-mark,
+  .error-mark {
+    position: absolute;
+    top: 10px;
+    left: 100%;
+  }
+  .mat-error {
+    display: block;
+    position: absolute;
+    bottom: 18px;
+    left: 102%;
+    color: $error-color;
+    font-size: 13px;
+    font-style: italic;
+  }
+}
+
+.form-control.is-invalid {
+  background-position: right 0 center;
+}
+
+.text-green-form-control .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-infix {
+  .mat-input-element {
+    color: $green-color !important;
+    &:disabled {
+      color: $green-color !important;
+    }
+  }
+}
+
+.text-red-form-control .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-infix {
+  .mat-input-element {
+    color: $error-color !important;
+    &:disabled {
+      color: $error-color !important;
+    }
+  }
+}
+
+.wtihManualError {
+  .form-group {
+    .mat-form-field {
+      border: 1px solid $error-color !important;
+      .success-mark {
+        display: none;
+      }
+    }
+  }
+}
+
+.error-new-row {
+  .mat-checkbox-layout {
+    white-space: inherit;
+  }
+  .mat-form-field {
+    .mat-error {
+      position: inherit;
+      white-space: break-spaces;
+      line-height: 1;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+  }
+}
+
+.mat-autocomplete-panel.mat-autocomplete-visible {
+  visibility: visible;
+  box-shadow: 0 2px 6px 0 #00000028 !important;
+  background: #fff !important;
+  border-radius: 4px !important;
+  .mat-option {
+    &:hover {
+      background-color: $color-option-bg-hover;
+    }
+  }
+}
+
+.mat-checkbox-checkmark-path {
+  stroke: black !important;
+}
+
+.form-group.mobile {
+  .mat-form-field-label {
+    transform: translateY(-80px) translateX(-44px) scale(1) !important;
+  }
+}

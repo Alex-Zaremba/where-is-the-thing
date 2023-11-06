@@ -1,0 +1,24 @@
+@import "./variables";
+
+body {
+    background-color: $background-color;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 95%;
+    padding: 10px 20px 15px 20px;
+    background-color: $background-color-container;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+b,
+strong {
+    font-weight: 600;
+}
+
+.valider-button-block {
+    margin-top: 20px;
+}

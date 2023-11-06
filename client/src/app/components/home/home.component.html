@@ -1,0 +1,28 @@
+<div class="container">
+  <p>{{ content }}</p>
+  <p *ngIf="!isLoggedIn">
+    <a [routerLink]="'/login'"> Please Login to continue </a>
+  </p>
+  <p *ngIf="isLoggedIn">
+    <a [routerLink]="'/things'"
+      >Please continue here - Where is the thing tab
+    </a>
+  </p>
+  <p>
+    Web application for identifying the location of things in the apartment.
+  </p>
+  <p>
+    User have "things" (e.g.: keys, smartphone, credit card) and "containers"
+    (e.g.: organizer box, wallet, closet). "Things" should have description and
+    volume (in cubic centimeters) fields. "Containers" should have description
+    and volume (in cubic centimeters) fields.
+  </p>
+  <p>
+    "Things" can be put into "containers". "Containers" also can be put into
+    other "containers". User can add, edit and remove "things" and "containers".
+    Thing can not be put into a "container" if it does not fit or there is no
+    capacity left. Each container should show the remaining free space occupied
+    by things (of all levels of nesting), but not by containers. UI/UX is on
+    your own.
+  </p>
+</div>

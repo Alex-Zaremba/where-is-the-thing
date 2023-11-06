@@ -1,0 +1,15 @@
+<div>
+  <div class="modal-header" *ngIf="title">
+    <h5 class="modal-title" [innerHtml]="title"></h5>
+  </div>
+  <div class="modal-body" *ngIf="body">
+    <p class="confirmation-modal-text" [innerHtml]="body | safeHtml"></p>
+  </div>
+
+  <div class="modal-footer">
+    <div>
+      <button class="btn btn-blue" (click)="onCancel()">Cancel</button>
+      <button class="btn btn-red" (click)="onConfirm()">Delete</button>
+    </div>
+  </div>
+</div>

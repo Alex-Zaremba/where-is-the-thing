@@ -1,0 +1,53 @@
+@import "./variables";
+
+.modal-dialog {
+    &.modal-xlg {
+        max-width: 90%;
+    }
+    .modal-content {
+        background-color: #f7f7f7;
+        box-shadow: 0 5px 15px rgb(0 0 0 / 50%);
+        .modal-header {
+            display: block;
+            text-align: center;
+            border-bottom: none;
+            &.error-modal {
+                .modal-title {
+                    display: inline;
+                    color: $error-color;
+                }
+            }
+            .error-mark {
+                padding: 3px 8px;
+                margin-left: 0;
+                margin-right: 5px;
+            }
+        }
+        .modal-footer {
+            border-top: none;
+            text-align: center;
+            display: block;
+            .btn {
+                min-width: 180px;
+                margin: 5px 20px;
+            }
+        }
+    }
+}
+
+.delete-item-confirm-dialog {
+    margin-top: 80px !important;
+}
+
+@media (max-width: 767px) {
+    .modal-dialog {
+        .modal-content {
+            .modal-footer {
+                .btn {
+                    width: 100%;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}

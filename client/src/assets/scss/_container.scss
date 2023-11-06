@@ -1,0 +1,91 @@
+@import "./variables";
+
+$background-container-color: #676666;
+$background-thing-color: #989898;
+
+.container-item-admin,
+.thing-item-admin {
+    background-color: $background-container-color;
+    color: white;
+    padding: 5px 10px 10px 10px;
+    margin: 15px 0px;
+    border-radius: 0.25rem;
+    .extra-info {
+        text-align: right;
+        font-size: 12px;
+    }
+    .buttons {
+        .btn {
+            margin-right: 10px;
+        }
+    }
+}
+
+.thing-item-admin {
+    background-color: $background-thing-color;
+}
+
+.example-container {
+    border-radius: 0.25rem;
+    margin: 10px 0;
+
+    .container-body {
+        width: 100%;
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.parent-container {
+    .example-container {
+        border-radius: 0.25rem 0.25rem 0 0.25rem;
+        margin: 0;  
+    }
+}
+
+.child-container {
+    .example-container {
+        border-radius: 0 0 0.25rem 0.25rem;
+        margin: 0 0 0 25%;
+    }
+}
+
+.example-container,
+.example-thing {
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+}
+
+.example-box {
+    background: white;
+}
+
+.cdk-drop-list {
+    min-height: 44px;
+    border: 1px solid #d7d7d7;
+    border-radius: 0.25rem;
+    .thing-item-admin {
+        margin: 10px 0px;
+    }
+}
+
+.example-list {
+    padding: 0 15px;
+    background: white;
+}
+
+.example-list {
+    .example-thing,
+    .example-box {
+        padding: 0 10px;
+    }
+}

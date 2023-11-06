@@ -1,0 +1,67 @@
+@import "./variables";
+
+button:focus {
+    outline: none !important;
+}
+
+.btn {
+    color: $white;
+    transition: $transition-config;
+    cursor: pointer;
+    line-height: 1rem;
+    margin: 0;
+    vertical-align: middle;
+    padding: 0.5rem 1.5rem;
+    &:focus,
+    &:active {
+        outline: 0;
+        box-shadow: none;
+    }
+    &.valider {
+        min-width: 250px;
+    }
+    &.btn-blue {
+        background: $blue-btn-color;
+        border-color: $blue-btn-color;
+        &:hover {
+            color: $white;
+            background: $blue-btn-hover-color;
+        }
+        &:disabled {
+            cursor: default;
+            background: $disabled-background;
+            color: $disabled-text-color;
+            border: none;
+            .ng-fa-icon {
+                color: white;
+            }
+        }
+    }
+    &.btn-red {
+        background: $red-btn-color;
+        border-color: $red-btn-color;
+        &:hover {
+            color: $white;
+            background: $red-btn-hover-color;
+        }
+        &:disabled {
+            cursor: default;
+            background: $disabled-background;
+            color: $disabled-text-color;
+            border: none;
+            .ng-fa-icon {
+                color: white;
+            }
+        }
+    }
+    .ng-fa-icon {
+        margin-right: 10px;
+    }
+}
+
+button.btn.btn-primary[disabled] {
+    background-color: #e5e5e5;
+    color: $middle-grey;
+    border-color: $disabled-background;
+    cursor: default;
+}

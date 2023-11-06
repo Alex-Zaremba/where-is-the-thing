@@ -1,0 +1,65 @@
+<div class="container-body">
+  <!-- <div class="row">
+    <div class="col-6">
+      <p><b>id:</b> {{ container.id }}</p>
+    </div>
+    <div class="col-6">
+      <p><b>parentId:</b> {{ container.parentId }}</p>
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col-6">
+      <p><b>Name:</b> {{ container.name }}</p>
+    </div>
+    <div class="col-6">
+      <p><b>Volume:</b> {{ container.volume }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <p><b>Things:</b></p>
+    </div>
+    <div class="col-6">
+      <p>
+        <b>Free volume:</b>
+        {{ container.freeVolume ?? container.volume }}
+      </p>
+    </div>
+  </div>
+
+  <div
+    [id]="container.id"
+    cdkDropList
+    [cdkDropListData]="containerThings"
+    [cdkDropListConnectedTo]="connectedTo"
+    class="example-list mb-2"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="row">
+      <div
+        class="col-sm-6 col-lg-4"
+        *ngFor="let item of containerThings"
+        cdkDrag
+      >
+        <div class="thing-item-admin">
+          <div class="name">
+            <span class="title">Name: </span>
+            <span class="value">{{ item.name }} </span>
+          </div>
+          <div class="volume">
+            <span class="title">Volume: </span>
+            <span class="value">{{ item.volume }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    *ngIf="!isContainerParent"
+    type="button"
+    class="btn btn-blue"
+    (click)="moveContainer(container)"
+  >
+    Move container
+  </button>
+</div>

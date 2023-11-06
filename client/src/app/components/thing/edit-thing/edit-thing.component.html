@@ -1,0 +1,45 @@
+<div>
+  <form [formGroup]="form" *ngIf="form">
+    <div class="modal-header">
+      <h5 class="modal-title">{{ title }}</h5>
+    </div>
+
+    <div class="modal-body">
+      <div class="row">
+        <div class="col">
+          <app-name-with-digits-form-control
+            [parentForm]="form"
+            [controlName]="'name'"
+            [placeholder]="'Name'"
+            [title]="'Name'"
+          >
+          </app-name-with-digits-form-control>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <app-number-form-control
+            [parentForm]="form"
+            [controlName]="'volume'"
+            [placeholder]="'Volume'"
+            [title]="'Volume'"
+          >
+          </app-number-form-control>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <div>
+        <button class="btn btn-blue" (click)="onCancel()">Cancel</button>
+        <button
+          class="btn btn-success"
+          (click)="onConfirm()"
+          [disabled]="form.invalid"
+        >
+          {{ submitBtnText }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

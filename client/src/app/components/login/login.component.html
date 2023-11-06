@@ -1,0 +1,51 @@
+<div class="col-md-12">
+  <div class="card card-container">
+    <img
+      id="profile-img"
+      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      class="profile-img-card"
+    />
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="form">
+      <div class="row">
+        <div class="col">
+          <app-name-with-digits-form-control
+            [parentForm]="form"
+            [controlName]="'userName'"
+            [placeholder]="'Name'"
+            [title]="'Name'"
+          >
+          </app-name-with-digits-form-control>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <app-password-form-control
+            [parentForm]="form"
+            [controlName]="'password'"
+            [placeholder]="'Password'"
+            [title]="'Password'"
+          >
+          </app-password-form-control>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col">
+          <div class="valider-button-block">
+            <button
+              type="submit"
+              class="btn btn-blue"
+              [disabled]="isFormDisabled"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      Logged in as {{ roles }}.
+    </div>
+  </div>
+</div>
